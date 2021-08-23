@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <title th:text="${title}">Songs for Soldiers</title>
+</head>
+<body>
+    <div id="header" th:fragment="header">
+        <a href="index"><img src="../images/S4S_color.png" alt="Songs for Soldiers logo with link to Home page" width="250" height="28"/></a>
+        <nav>
+            <a href="/S4S/index">Home</a>
+            <a href="/S4S/about">Our Mission</a>
+            <a href="/S4S/shop">Merchandise</a>
+            <a href="/S4S/events">Events</a>
+            <a href="/S4S/contact">Contact Us</a>
+        </nav>
+    </div>
+
+    <div id="footer" th:fragment="footer">
+        <ul>
+            <li><a href="/S4S/contact">Contact Us</a></li>•
+            <li><a href="/S4S/contact/apply">Apply for Assistance</a></li>•
+            <li><a href="/S4S/contact/volunteer">Volunteer </a></li>
+        </ul>
+        <a href="https://m.facebook.com/songs4soldiersstl/">
+            <img src="../images/facebook_rounded_BW.svg" alt="image link to Facebook"></a>
+        <a href="https://twitter.com/S4S_STL">
+            <img src="../images/twitter_rounded_BW.svg" alt="image link to Twitter"></a>
+        <a href="https://www.instagram.com/s4sstl/reels/">
+            <img src="../images/instagram_rounded_BW.svg" alt="image link to Instagram"></a>
+        <a href="https://www.youtube.com/channel/UC2W9BNe9t5V4fuRnTnuom5Q" alt="image link to YouTube">
+            <img src="../images/youtube_rounded_BW.svg"></a>
+    </div>
+
+
+</body>
+</html>
