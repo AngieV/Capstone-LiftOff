@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<div id="header" th:replace="fragments :: header"></div>
+
+<h1 th:text="${title}"></h1>
+<form method="post" class="form-group">
+    <label>Qty:</label><input type="text" name="quantity">
+    <label>Type:</label><input type="checkbox" name="pass">
+
+    <div class="form-group">
+        <input type="submit" value="Buy" class="btn btn-success">
+    </div>
+</form>
+
+
+</body>
+</html>

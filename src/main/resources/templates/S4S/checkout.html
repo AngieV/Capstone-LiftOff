@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+    <div id="header" th:replace="fragments :: header"></div>
+    <h3>Your Cart:</h3>
+    <div id="cart">
+        <table>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Price</th>
+        </table>
+        <p>Item</p>
+    </div>
+
+    <h3>Your Info:</h3>
+    <form method="post" class="form-group">
+        <p>*All fields required</p>
+        <label>Name on Card:</label><input type="text" name="cardName"/>
+        <label>Exp Date</label><input type="text" name="cardExp" />
+        <label>CVV</label><input type="text" name="cardCVV" />
+        <p>Billing address:</p>
+        <label>Street:</label><input type="text" name="cardBilling" />
+        <label>City:</label><input type="text" name="cardCity">
+        <label>State:</label><input type="text" name="cardState">
+        <label>Zip:</label><input type="text" name="cardZip">
+        <p>Shipping address:</p>
+        <checkbox>Same as Card</checkbox>
+
+        <label>e-mail:</label><input type="text" name="input_email"/>
+        <label>Telephone/Cell:</label><input type="text" name="input_phone"/>
+        <div class="form-group">
+            <input type="submit" value="Checkout" class="btn btn-success">
+        </div>
+    </form>
+
+    <div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>

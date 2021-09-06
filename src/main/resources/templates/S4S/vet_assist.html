@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
+
 <body class="container">
     <div id="header" th:replace="fragments :: header"></div>
 
     <h1 th:text="${title}"></h1>
-
-    <h2>Apply for Assistance</h2>
     <form method="post" class="form-group">
         <p>*All fields required</p>
         <label>Name</label><input type="text" name="vet_name" class="form-control">
@@ -15,26 +14,13 @@
         <label>Branch of Service</label><input type="text" name="input_branch"  class="form-control"/>
         <label>Start</label><input type="date" name="vet_serviceEnd" class="form-control"/>
         <label>End</label><input type="date" name="vet_serviceEnd" class="form-control"/>
-        <label>How can we can help you?</label><textarea rows="10" cols="75" name="vet_help" class="form-control"></textarea>
+        <label>How can we can help you?</label><input type="textarea" rows="15" cols="75" name="vet_help" class="form-control"/>
         <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
             <input type="reset">
         </div>
     </form>
 
-    <h2>Volunteer</h2>
-    <form method="post" class="form-group">
-        <p>*All fields required</p>
-        <label>Name:</label><input type="text" name="vol_name" class="form-control"/>
-        <label>e-mail:</label><input type="text" name="vol_email" class="form-control"/>
-        <label>Phone/Cell:</label><input type="text" name="vol_phone" class="form-control"/>
-        <label>Tell about how you can help!</label><textarea name="vol_help" rows="10" cols="75"></textarea>
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-success">
-            <input type="reset">
-        </div>
-    </form>
 
-    <div id="footer" th:replace="fragments :: footer"></div>
 </body>
 </html>

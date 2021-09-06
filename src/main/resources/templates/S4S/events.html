@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
-<body>
+<body class="container">
     <div id="header" th:replace="fragments :: header"></div>
 
     <h1 th:text="${title}"></h1>
+
+        <div>
+            <img src="../images/ConcertPoster2021.jpeg" alt="Songs for Soldiers Concert Poster 2021" />
+        </div>
+
+    <h1>Past Events</h1>
+
 
     <div id="footer" th:replace="fragments :: footer"></div>
 </body>
