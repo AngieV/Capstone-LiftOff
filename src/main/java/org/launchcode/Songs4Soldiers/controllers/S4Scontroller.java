@@ -1,6 +1,6 @@
 package org.launchcode.Songs4Soldiers.controllers;
 
-import org.launchcode.Songs4Soldiers.models.Volunteer;
+import org.launchcode.Songs4Soldiers.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class S4Scontroller {
 
 
-    private static List<Volunteer> volunteer = new ArrayList<>();
+    private static List<User> user = new ArrayList<>();
 
     @RequestMapping(value="index")
     public String index(Model model){
@@ -50,19 +50,22 @@ public class S4Scontroller {
 
     @GetMapping("contact")
     public String displayVolunteerForm(Model model){
-        model.addAttribute("vol_name", "vol_name");
-        model.addAttribute("vol_email", "vol_email");
-        model.addAttribute("vol_phone", "vol_phone");
-        model.addAttribute("vol_help", "vol_help");
+        model.addAttribute("userType", "userType");
+        model.addAttribute("name", "name");
+        model.addAttribute("email", "email");
+        model.addAttribute("phone", "phone");
+        model.addAttribute("help", "help");
+        //model.addAttribute(new User());
         return "S4S/contact";
     }
 
     @PostMapping("contact")
-    public String createVolunteer(@RequestParam String vol_name,
-                                  @RequestParam String vol_email,
-                                  @RequestParam String vol_phone,
-                                  @RequestParam String vol_help){
-        volunteer.add(new Volunteer(vol_name, vol_email,vol_phone, vol_help));
+    public String createUser(@RequestParam String userType,
+                             @RequestParam String name,
+                             @RequestParam String email,
+                             @RequestParam String phone,
+                             @RequestParam String help){
+        user.add(new User(userType, name, email,phone, help));
         return "redirect: /S4S/contact";
     }
 
