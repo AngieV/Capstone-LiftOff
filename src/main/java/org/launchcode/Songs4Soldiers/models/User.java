@@ -1,24 +1,23 @@
 package org.launchcode.Songs4Soldiers.models;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 public class User {
 
     private final String userType;
 
-    @NotBlank
+    @NotBlank (message = "Name is required")
     private String name;
 
-    @NotBlank
+    @NotBlank(message = "Name is required")
     @Email
+    @Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
     private String email;
 
-//    @Pattern([0-9]{3}-[0-9]{3}-[0-9]{4})
+    @Size(max = 12, message = "Too many digits! format: 000-555-1234")
     private String phone;
 
-
+    @Size(max=500, message = "Description too long!")
     private String help;
 
     public User(String userType, String name, String email, String phone, String help) {

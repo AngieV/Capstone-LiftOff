@@ -7,15 +7,13 @@
     <h1 th:text="${title}"></h1>
 
     <h2>Apply for Assistance</h2>
-    <form method="post" class="form-group">
+    <form method="post" class="form-group"> <!-- action="processVetAssistForm()"  ??? -->
         <p>*All fields required</p>
         <label>Name:</label><input type="text" name="name" class="form-control">
         <label>e-mail:</label><input type="text" name="email" class="form-control">
-        <!-- <label>e-mail:</label><input type="email" name="vet_email" class="form-control"/>-->
-        <!-- <label>Phone/Cell where you can be contacted:</label><input type="tel" name="vet_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control"/>-->
         <label>Phone/Cell where you can be contacted:</label><input type="text" name="phone" class="form-control">
         <label>Branch of Service:</label><input type="select" name="input_branch"  class="form-control">
-        <label>Start:</label><input type="date" name="vet_serviceEnd" class="form-control">
+        <label>Start:</label><input type="date" name="vet_serviceStart" class="form-control">
         <label>End:</label><input type="date" name="vet_serviceEnd" class="form-control">
         <label>How can we can help you?</label><textarea rows="10" cols="75" name="help" class="form-control"></textarea>
         <input type="hidden" name="userType" value="vet" >
@@ -28,12 +26,12 @@
     <h2>Volunteer</h2>
     <form method="post" class="form-group">
         <p>*All fields required</p>
-        <label>Name:</label><input type="text" name="name" class="form-control">
-        <label>e-mail:</label><input type="text" name="email" class="form-control">
+        <label>Name:</label><input type="text" name="vol_name" class="form-control">
+        <label>e-mail:</label><input type="text" name="vol_email" class="form-control">
         <!-- <label>e-mail:</label><input type="email" name="vol_email" class="form-control"/>-->
         <!-- <label>Phone/Cell:</label><input type="tel" name="vol_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control"/>-->
-        <label>Phone/Cell:</label><input type="text" name="phone" class="form-control">
-        <label>Tell about how you can help!</label><textarea name="help" rows="10" cols="75" class="form-control"></textarea>
+        <label>Phone/Cell:</label><input type="text" name="vol_phone" class="form-control">
+        <label>Tell about how you can help!</label><textarea name="vol_help" rows="10" cols="75" class="form-control"></textarea>
         <input type="hidden" name="userType" value="volunteer" >
         <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
