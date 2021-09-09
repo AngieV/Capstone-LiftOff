@@ -22,7 +22,7 @@ public class FormsController {
     @GetMapping("contact")
     public String displayVetAssistForm(Model model){
         model.addAttribute("title", "Request Assistance");
-        model.addAttribute("userType", "userType");
+        model.addAttribute("veteran", new Veteran());
         model.addAttribute("vet_name", "vet_name");
         model.addAttribute("vet_email", "vet_email");
         model.addAttribute("vet_phone", "vet_phone");
@@ -46,7 +46,8 @@ public class FormsController {
 
     @GetMapping("contact")
     public String displayVolunteerForm(Model model){
-        model.addAttribute("userType", "userType");
+        model.addAttribute("title", "Request Assistance");
+        model.addAttribute("volunteer", new Volunteer());
         model.addAttribute("name", "name");
         model.addAttribute("email", "email");
         model.addAttribute("phone", "phone");

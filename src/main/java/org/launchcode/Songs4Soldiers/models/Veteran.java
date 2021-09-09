@@ -4,10 +4,9 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.Objects;
 
 public class Veteran {
-
-    private final String userType;
 
     @NotBlank(message = "Name is required")
     private String vet_name;
@@ -21,6 +20,8 @@ public class Veteran {
     @Size(max = 12, message = "Too many digits! format: 000-555-1234")
     private String vet_phone;
 
+    private String branch;
+
     private Date vet_serviceStart;
 
     private Date vet_serviceEnd;
@@ -28,19 +29,18 @@ public class Veteran {
     @Size(max=500, message = "Description too long!")
     private String vet_help;
 
-    public Veteran(String userType, String vet_name, String vet_email, String vet_phone, Date vet_serviceStart, Date vet_serviceEnd, String vet_help) {
-        this.userType = userType;
+    public Veteran(String vet_name, String vet_email, String vet_phone, String branch, Date vet_serviceStart, Date vet_serviceEnd, String vet_help) {
+        this();
         this.vet_name = vet_name;
         this.vet_email = vet_email;
         this.vet_phone = vet_phone;
+        this.branch = branch;
         this.vet_serviceStart = vet_serviceStart;
         this.vet_serviceEnd = vet_serviceEnd;
         this.vet_help = vet_help;
     }
 
-    public String getUserType() {
-        return userType;
-    }
+    public Veteran(){}
 
     public String getVet_name() {
         return vet_name;
@@ -74,6 +74,14 @@ public class Veteran {
         this.vet_serviceStart = vet_serviceStart;
     }
 
+    public String getBranch() {
+        return branch;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
     public Date getVet_serviceEnd() {
         return vet_serviceEnd;
     }
@@ -90,4 +98,16 @@ public class Veteran {
         this.vet_help = vet_help;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Veteran veteran = (Veteran) o;
+        return getVet_name().equals(veteran.getVet_name()) && getVet_email().equals(veteran.getVet_email()) && getVet_phone().equals(veteran.getVet_phone()) && getBranch().equals(veteran.getBranch()) && getVet_serviceStart().equals(veteran.getVet_serviceStart()) && getVet_serviceEnd().equals(veteran.getVet_serviceEnd()) && getVet_help().equals(veteran.getVet_help());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getVet_name(), getVet_email(), getVet_phone(), getBranch(), getVet_serviceStart(), getVet_serviceEnd(), getVet_help());
+    }
 }

@@ -27,7 +27,6 @@ public class UserData {
         return users.get(email);
     }
 
-
     //add volunteers and vets
     public static void add(Volunteer volunteer){
         volunteers.put(volunteer.getVol_email(), volunteer);

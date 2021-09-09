@@ -3,10 +3,9 @@ package org.launchcode.Songs4Soldiers.models;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.Objects;
 
 public class Volunteer {
-
-    private final String userType;
 
     @NotBlank(message = "Name is required")
     private String vol_name;
@@ -23,18 +22,15 @@ public class Volunteer {
     @Size(max = 500, message = "Description too long!")
     private String vol_help;
 
-
-    public Volunteer(String userType, String vol_name, String vol_email, String vol_phone, String vol_help) {
-        this.userType = userType;
+    public Volunteer(String vol_name, String vol_email, String vol_phone, String vol_help) {
+        this();
         this.vol_name = vol_name;
         this.vol_email = vol_email;
         this.vol_phone = vol_phone;
         this.vol_help = vol_help;
     }
 
-    public String getUserType() {
-        return userType;
-    }
+    public Volunteer(){}
 
     public String getVol_name() {
         return vol_name;
@@ -64,5 +60,18 @@ public class Volunteer {
 
     public void setVol_help(String vol_help) {
         this.vol_help = vol_help;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Volunteer volunteer = (Volunteer) o;
+        return getVol_name().equals(volunteer.getVol_name()) && getVol_email().equals(volunteer.getVol_email()) && getVol_phone().equals(volunteer.getVol_phone()) && getVol_help().equals(volunteer.getVol_help());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getVol_name(), getVol_email(), getVol_phone(), getVol_help());
     }
 }

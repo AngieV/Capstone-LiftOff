@@ -4,8 +4,6 @@ import javax.validation.constraints.*;
 
 public class User {
 
-    private final String userType;
-
     @NotBlank (message = "Name is required")
     private String name;
 
@@ -20,16 +18,10 @@ public class User {
     @Size(max=500, message = "Description too long!")
     private String help;
 
-    public User(String userType, String name, String email, String phone, String help) {
-        this.userType = userType;
+    public User(String name, String email, String phone) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.help = help;
-    }
-
-    public String getUserType() {
-        return userType;
     }
 
     public String getName() {
@@ -54,14 +46,6 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
-    }
-
-    public String getHelp() {
-        return help;
-    }
-
-    public void setHelp(String help) {
-        this.help = help;
     }
 
 }
