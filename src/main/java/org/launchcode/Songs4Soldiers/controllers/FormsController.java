@@ -23,12 +23,12 @@ public class FormsController {
     public String displayVetAssistForm(Model model){
         model.addAttribute("title", "Request Assistance");
         model.addAttribute("veteran", new Veteran());
-        model.addAttribute("vet_name", "vet_name");
+        /*model.addAttribute("vet_name", "vet_name");
         model.addAttribute("vet_email", "vet_email");
         model.addAttribute("vet_phone", "vet_phone");
         model.addAttribute("vet_serviceStart", "vet_serviceStart");
         model.addAttribute("vet_serviceEnd", "vet_serviceEnd");
-        model.addAttribute("vet_help", "vet_help");
+        model.addAttribute("vet_help", "vet_help");*/
         return "S4S/contact";
     }
 
@@ -41,17 +41,17 @@ public class FormsController {
             return "S4S/contact";
         }
         UserData.add(newVeteran);
-        return "redirect: /S4S/contact";
+        return "redirect: /S4S/create_account";
     }
 
     @GetMapping("contact")
     public String displayVolunteerForm(Model model){
         model.addAttribute("title", "Request Assistance");
         model.addAttribute("volunteer", new Volunteer());
-        model.addAttribute("name", "name");
+        /*model.addAttribute("name", "name");
         model.addAttribute("email", "email");
         model.addAttribute("phone", "phone");
-        model.addAttribute("help", "help");
+        model.addAttribute("help", "help");*/
         return "S4S/contact";
     }
 
@@ -63,7 +63,7 @@ public class FormsController {
             return "S4S/contact";
         }
         UserData.add(newVolunteer);
-        return "redirect: /S4S/contact";
+        return "redirect: /S4S/create_account";
     }
 
     @GetMapping("create_account")

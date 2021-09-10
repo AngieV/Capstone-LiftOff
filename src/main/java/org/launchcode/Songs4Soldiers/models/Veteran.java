@@ -12,7 +12,7 @@ public class Veteran {
     private String vet_name;
 
     @NotBlank(message = "Email is required")
-    @Email
+    @Email(message = "Invalid email. Try again.")
     @Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
     private String vet_email;
 

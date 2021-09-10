@@ -16,7 +16,7 @@
 
         <label>e-mail:</label><input type="text" name="vet_email" class="form-control">
         <label>Phone/Cell where you can be contacted:</label><input type="text" name="vet_phone" class="form-control">
-        <label>Branch of Service:</label><input type="select" name="input_branch"  class="form-control">
+        <label>Branch of Service:</label><input type="text" name="input_branch"  class="form-control">
         <label>Start:</label><input type="date" name="vet_serviceStart" class="form-control">
         <label>End:</label><input type="date" name="vet_serviceEnd" class="form-control">
         <label>How can we can help you?</label><textarea rows="10" cols="75" name="vet_help" class="form-control"></textarea>
@@ -31,8 +31,6 @@
         <p>*All fields required</p>
         <label>Name:</label><input type="text" name="vol_name" class="form-control">
         <label>e-mail:</label><input type="text" name="vol_email" class="form-control">
-        <!-- <label>e-mail:</label><input type="email" name="vol_email" class="form-control"/>-->
-        <!-- <label>Phone/Cell:</label><input type="tel" name="vol_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control"/>-->
         <label>Phone/Cell:</label><input type="text" name="vol_phone" class="form-control">
         <label>Tell about how you can help!</label><textarea name="vol_help" rows="10" cols="75" class="form-control"></textarea>
         <div class="form-group">
@@ -40,6 +38,7 @@
             <input type="reset" class="btn btn-info">
         </div>
     </form>
+
 
     <div id="footer" th:replace="fragments :: footer"></div>
 </body>
@@ -51,10 +50,10 @@
 <p th:text="${errorMsg}" style="color:red;"></p>
 <form method="post" class="form-group"> &lt;!&ndash; action="processVetAssistForm()"  ??? &ndash;&gt;
     <p>*All fields required</p>
-    <label>Name:</label><input th:text="${veteran.vet_name}" class="form-control">
+    <label>Name:</label><input th:field="${veteran.vet_name}" class="form-control">
     <label>e-mail:</label><input th:field="${veteran.vet_email}" class="form-control">
-    <label>Phone/Cell where you can be contacted:</label><input type="text" th:field="${veteran.vet_phone}" class="form-control">
-    <label>Branch of Service:</label><input type="select" th:field="${veteran.branch}"  class="form-control">
+    <label>Phone/Cell where you can be contacted:</label><input th:field="${veteran.vet_phone}" class="form-control">
+    <label>Branch of Service:</label><input th:field="${veteran.branch}"  class="form-control">
     <label>Start:</label><input type="date" th:field="${veteran.vet_serviceStart}" class="form-control">
     <label>End:</label><input type="date" th:field="${veteran.vet_serviceEnd}" class="form-control">
     <label>How can we can help you?</label><textarea rows="10" cols="75" th:field="${veteran.vet_help}" class="form-control"></textarea>
@@ -69,11 +68,11 @@
 <p th:text="${errorMsg}" style="color:red;"></p>
 <form method="post" class="form-group">
     <p>*All fields required</p>
-    <label>Name:</label><input type="text" th:field="${volunteer.vol_name}" class="form-control">
-    <label>e-mail:</label><input type="text" th:field="${volunteer.vol_email}" class="form-control">
-    &lt;!&ndash; <label>e-mail:</label><input type="email" name="vol_email" class="form-control"/>&ndash;&gt;
-    &lt;!&ndash; <label>Phone/Cell:</label><input type="tel" name="vol_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control"/>&ndash;&gt;
-    <label>Phone/Cell:</label><input type="text" th:field="${volunteer.vol_phone}" class="form-control">
+    <label>Name:</label><input th:field="${volunteer.vol_name}" class="form-control">
+    <label>e-mail:</label><input th:field="${volunteer.vol_email}" class="form-control">
+    &lt;!&ndash; <label>e-mail:</label><input th:field="${volunteer.vol_email}" class="form-control">
+    &lt;!&ndash; <label>Phone/Cell:</label><input th:field="${volunteer.vol_phone}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control">
+    <label>Phone/Cell:</label><input th:field="${volunteer.vol_phone}" class="form-control">
     <label>Tell about how you can help!</label><textarea th:field="${volunteer.vol_help}" rows="10" cols="75" class="form-control"></textarea>
     <input type="hidden" name="userType" value="volunteer" >
     <div class="form-group">
