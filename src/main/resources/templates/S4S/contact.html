@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+    <div id="header" th:replace="fragments :: header"></div>
+
+    <h1 th:text="${title}">Default Title</h1>
+
+    <!-------    DISPLAY VET ASSISTANCE FORM ------->
+
+    <h2 th:text="${title_vet}">Apply for Assistance</h2>
+
+    <form th:action="@{/S4S/contact}" th:object="${veteran}" method="post" >
+        <p>* fields required</p>
+        <p th:text="${errorMsg}" style="color:red;"></p>
+
+        <div class="form-group">
+            <label>*Name: <input type="text" th:field="*{vet_name}" class="form-control" ></label>
+        </div>
+        <div class="form-group">
+            <label>*e-mail:<input type="text" th:field="${veteran.vet_email}" class="form-control" ></label>
+        </div>
+        <div>
+            <label>Phone/Cell:<input th:field="*{vet_phone}" class="form-control"></label>
+        </div>
+<!--        <label>Start:</label><input type="date" th:field="${veteran.vet_serviceStart}" class="form-control">-->
+<!--        <label>End:</label><input type="date" th:field="${veteran.vet_serviceEnd}" class="form-control">-->
+
+        <label>How can we can help you?</label><textarea rows="10" cols="75" th:field="${veteran.vet_help}" class="form-control"></textarea>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="reset" class="btn btn-info">
+        </div>
+    </form>
+
+    <!-------   DISPLAY VOLUNTEER FORM   ------->
+
+    <h2 th:text="${title_vol}">Volunteer</h2>
+
+<!--    <form action="#" th:action="@{/S4S/contact}" th:object="${volunteer}" method="post" >-->
+<!--        <p>* fields required</p>
+    <form>
+        <div class="form-group">
+            <label>*Name: <input type="text" th:field="*{vol_name}" class="form-control"></label>
+        </div>
+        <div class="form-group">
+            <label>*e-mail:<input type="text" th:field="*{vol_email}" class="form-control"></label>
+        </div>
+        <div>
+            <label>Phone/Cell:<input th:field="*{vol_phone}" class="form-control"></label>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="reset" class="btn btn-info">
+        </div>
+    </form>-->
+
+        <!--<p th:text="${errorMsg}" style="color:red;"></p>
+
+            <label>Branch of Service:</label>
+                <select th:field="${vet_branch}">
+                    <option th:value="ARMY"></option>
+                    <option th:value="NAVY"></option>
+                    <option th:value="AIR FORCE"></option>
+                    <option th:value="MARINES"></option>
+                    <option th:value="COAST GUARD"></option>
+                </select>
+
+        </form>
+
+        <h2>Volunteer</h2>
+        <p th:text="${errorMsg}" style="color:red;"></p>
+        <form action="/S4S/contact" th: object="${volunteer}" method="post" >
+            <p>* fields required</p>
+            <label>*Name:</label><input th:field="${volunteer.vol_name}" class="form-control" required>
+            <label>*e-mail:</label><input th:field="${volunteer.vol_email}" class="form-control" required>
+        &lt;!&ndash;    <label>Phone/Cell:</label><input th:field="${volunteer.vol_phone}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="form-control">&ndash;&gt;
+            <label>Phone/Cell:</label><input th:field="${volunteer.vol_phone}" class="form-control">
+            <textarea th:field="*{volunteer.vol_help}" rows="10" cols="75" placeholder="Tell about how you can help!" class="form-control"></textarea>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-success">
+                <input type="reset" class="btn btn-info">
+            </div>
+        </form>-->
+
+<div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>
