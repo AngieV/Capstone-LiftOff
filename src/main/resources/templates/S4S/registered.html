@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<div id="header" th:replace="fragments :: header"></div>
+
+    <h1 th:text="${title}"></h1>
+    <h2>Thank You! Your submission has been recieved!</h2>
+
+    <span>Name:</span><span th:text="${vet_name}"></span><br>
+    <span>Email:</span><span th:text="${vet_email}"></span><br>
+    <span>Phone:</span><span th:text="${vet_phone}"></span><br>
+    <span>Message:</span>
+    <span></span>
+
+
+
+<div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>

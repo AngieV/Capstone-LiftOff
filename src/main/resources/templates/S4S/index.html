@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+    <div id="header" th:replace="fragments :: header"></div>
+
+    <h1 th:text="${title}"></h1>
+
+    <h1>8th Annual Songs 4 Soldiers Benefit Concert</h1>
+    <h3>featuring Josh Turner & Night Ranger</h3>
+    <h2>September 17 & 18, 2021</h2>
+
+    <p>After a year's hiatus it's back and bigger than ever!</p>
+
+    <div>
+        <img src="../images/JoshTurnerPromo2021.jpeg" alt="Josh Turner Promo photo" />
+        <img src="../images/NightRangerPromo21_1.jpeg" alt="Night Ranger Promo photo" />
+    </div>
+
+    <h2>Presented by:</h2>
+    <img src="../images/weberChevrolet.png" alt="../images/Weber Chevrolet logo" /><img src="../images/budweiser.png" alt="Budweiser logo" />
+    <button type="submit">Buy Tickets</button >
+
+    <div id="footer" th:replace="fragments :: footer"></div>
+
+</body>
+</html>
