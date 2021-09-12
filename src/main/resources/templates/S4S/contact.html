@@ -15,18 +15,22 @@
         <p th:text="${errorMsg}" style="color:red;"></p>
 
         <div class="form-group">
-            <label>*Name: <input type="text" th:field="*{vet_name}" class="form-control" ></label>
+            <label>*Name: <input type="text" th:field="${veteran.vet_name}" class="form-control" ></label>
+            <p class="error" th:errors="${veteran.vet_name}"></p>
         </div>
         <div class="form-group">
             <label>*e-mail:<input type="text" th:field="${veteran.vet_email}" class="form-control" ></label>
+            <p class="error" th:errors="${veteran.vet_email}"></p>
         </div>
         <div>
             <label>Phone/Cell:<input th:field="*{vet_phone}" class="form-control"></label>
+            <p class="error" th:errors="*{vet_phone}"></p>
         </div>
 <!--        <label>Start:</label><input type="date" th:field="${veteran.vet_serviceStart}" class="form-control">-->
 <!--        <label>End:</label><input type="date" th:field="${veteran.vet_serviceEnd}" class="form-control">-->
 
         <label>How can we can help you?</label><textarea rows="10" cols="75" th:field="${veteran.vet_help}" class="form-control"></textarea>
+        <p class="error" th:errors="${veteran.vet_help}"></p>
         <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
             <input type="reset" class="btn btn-info">
@@ -36,6 +40,7 @@
     <!-------   DISPLAY VOLUNTEER FORM   ------->
 
     <h2 th:text="${title_vol}">Volunteer</h2>
+
 
 <!--    <form action="#" th:action="@{/S4S/contact}" th:object="${volunteer}" method="post" >-->
 <!--        <p>* fields required</p>
