@@ -1,19 +1,29 @@
 package org.launchcode.Songs4Soldiers.models;
 
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Date;
 import java.util.Objects;
 
+@Entity
 public class Veteran {
 
+    @Id
+    @GeneratedValue
+    private int userID;
+
     @NotBlank(message = "Name is required")
+    @Size(min = 5, message = "Please use your full name.")
     private String vet_name;
 
     @NotBlank(message = "Email is required")
     @Email(message = "Invalid email. Try again.")
-    @Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
     private String vet_email;
 
     // @Pattern([0-9]{3}-[0-9]{3}-[0-9]{4})
@@ -30,7 +40,6 @@ public class Veteran {
     private String vet_help;
 
     public Veteran(String vet_name, String vet_email, String vet_phone, String branch, Date vet_serviceStart, Date vet_serviceEnd, String vet_help) {
-        this();
         this.vet_name = vet_name;
         this.vet_email = vet_email;
         this.vet_phone = vet_phone;
