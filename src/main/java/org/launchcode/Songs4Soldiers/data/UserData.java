@@ -4,10 +4,14 @@ import org.launchcode.Songs4Soldiers.models.User;
 import org.launchcode.Songs4Soldiers.models.Veteran;
 import org.launchcode.Songs4Soldiers.models.Volunteer;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.HashMap;
 import java.util.Map;
 
 public class UserData {
+
     //need a place to store user data
     private static Map<String, Volunteer> volunteers = new HashMap<>();
     private static Map<String, Veteran> veterans = new HashMap<>();
