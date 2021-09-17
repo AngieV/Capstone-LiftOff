@@ -37,7 +37,7 @@ public class FormsController {
     }
 
     @PostMapping("/contact")
-    public String processVetAssistRequest(@ModelAttribute("veteran") @Valid Veteran veteran,
+    public String processVetAssistRequest(@Valid @ModelAttribute("veteran") Veteran veteran,
                                           Errors errors, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("title", "Contact Us");
@@ -52,6 +52,8 @@ public class FormsController {
         UserData.add(volunteer);
         return "redirect:registered";
     }
+
+
 
 /*    @Autowired
     private static UserRepository userRepository;

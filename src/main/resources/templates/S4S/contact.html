@@ -8,7 +8,7 @@
     <!----------------------    DISPLAY VET ASSISTANCE FORM ---------------------->
 
     <h2 th:text="${title_vet}">Apply for Assistance:</h2>
-    <form action="vetAssist" th:action="@{/S4S/contact}" th:object="${veteran}" method="post">
+    <form action="contact" th:action="@{/S4S/contact}" th:object="${veteran}" method="post">
         <p>* fields required</p>
         <div class="form-group">
             <label>*Name: <input type="text" th:field="${veteran.vet_name}" class="form-control" ></label>
@@ -46,7 +46,7 @@
     <form action="/createVolunteer" th:action="@{/contact/createVolunteer}" th:object="${volunteer}" method="post">
          <p>* fields required</p>
          <div class="form-group">
-             <label>*Name: <input type="text" th:field="*{vol_name}" class="form-control"></label>
+             <label>*Name: <input type="text" th:field="${volunteer.vol_name}" class="form-control"></label>
          </div>
          <div class="form-group">
              <label>*e-mail:<input type="text" th:field="${volunteer.vol_email}" class="form-control"></label>
@@ -56,7 +56,7 @@
          </div>
          <div class="form-group">
              <label>"Tell us how you can help!"</label>
-             <textarea rows="10" cols="75" th:field="*{vol_help}" class="form-control"></textarea>
+             <textarea rows="10" cols="75" th:field="${volunteer.vol_help}" class="form-control"></textarea>
          </div>
         <div class="form-group">
             <input type="submit" value="Submit" class="btn btn-success">
