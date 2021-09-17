@@ -48,7 +48,7 @@ public class FormsController {
         return "redirect:registered";
     }
 
-    @PostMapping("/contact/vol")
+    @PostMapping("/contact/createVolunteer")
     public String createVolunteer(@ModelAttribute("volunteer") Volunteer volunteer, Model model){
         UserData.add(volunteer);
         return "redirect:registered";

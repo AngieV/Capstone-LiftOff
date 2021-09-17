@@ -43,7 +43,7 @@
     <!---------------------------  DISPLAY VOLUNTEER FORM   --------------------------->
     <h2 th:text="${title_vol}">Volunteer!</h2>
 
-    <!-- <form action="createVolunteer" th:action="@{/contact/createVolunteer}" th:object="${volunteer}" method="post">
+    <form action="/createVolunteer" th:action="@{/contact/createVolunteer}" th:object="${volunteer}" method="post">
          <p>* fields required</p>
          <div class="form-group">
              <label>*Name: <input type="text" th:field="*{vol_name}" class="form-control"></label>
@@ -71,7 +71,7 @@
              <label>Phone/Cell:<input th:field="${volunteer.vol_phone}" class="form-control"></label>
          </div>
 
-         <input type="reset" class="btn btn-info">-->
+         <input type="reset" class="btn btn-info">
 
     <div id="footer" th:replace="fragments :: footer"></div>
 </body>
