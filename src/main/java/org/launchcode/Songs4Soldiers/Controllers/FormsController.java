@@ -43,12 +43,11 @@ public class FormsController {
             model.addAttribute("title", "Contact Us");
             return "S4S/contact";
         }
-        //System.out.println(veteran);
         UserData.add(veteran);
         return "redirect:registered";
     }
 
-    @PostMapping("/contact/createVolunteer")
+    @PostMapping("/createVolunteer")
     public String createVolunteer(@ModelAttribute("volunteer") Volunteer volunteer, Model model){
         UserData.add(volunteer);
         return "redirect:registered";

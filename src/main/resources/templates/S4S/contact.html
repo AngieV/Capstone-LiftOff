@@ -58,20 +58,11 @@
              <label>"Tell us how you can help!"</label>
              <textarea rows="10" cols="75" th:field="*{vol_help}" class="form-control"></textarea>
          </div>
-         <div class="form-group">
-             <input type="submit" value="Submit" class="btn btn-success">
-         </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-success">
+            <input type="reset" class="btn btn-info">
+        </div>
      </form>
-      <div class="form-group"><label>*Name: <input type="text" th:field="${volunteer.vol_name}" class="form-control" ></label>
-         </div>
-         <div class="form-group">
-             <label>*e-mail:<input type="text" th:field="${volunteer.vol_email}" class="form-control"></label>
-         </div>
-         <div>
-             <label>Phone/Cell:<input th:field="${volunteer.vol_phone}" class="form-control"></label>
-         </div>
-
-         <input type="reset" class="btn btn-info">
 
     <div id="footer" th:replace="fragments :: footer"></div>
 </body>
