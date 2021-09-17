@@ -5,6 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
+
 public class Volunteer {
 
     //@NotBlank(message = "Name is required")
@@ -12,7 +13,6 @@ public class Volunteer {
 
     //@NotBlank(message = "Email is required")
     //@Email(message = "Invalid email. Try again.")
-    //@Size(min = 7, max = 55, message = "Email must be between 7 and 55 characters long")
     private String vol_email;
 
     // @Pattern([0-9]{3}-[0-9]{3}-[0-9]{4})

@@ -39,7 +39,8 @@ public class Veteran {
     @Size(max=500, message = "Description too long!")
     private String vet_help;
 
-    public Veteran(String vet_name, String vet_email, String vet_phone, String branch, Date vet_serviceStart, Date vet_serviceEnd, String vet_help) {
+    public Veteran(int userID, String vet_name, String vet_email, String vet_phone, String branch, Date vet_serviceStart, Date vet_serviceEnd, String vet_help) {
+        this.userID = userID;
         this.vet_name = vet_name;
         this.vet_email = vet_email;
         this.vet_phone = vet_phone;
@@ -50,6 +51,10 @@ public class Veteran {
     }
 
     public Veteran() {
+    }
+
+    public int getUserID() {
+        return userID;
     }
 
     public String getVet_name() {
@@ -118,17 +123,19 @@ public class Veteran {
                 '}';
     }
 
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Veteran veteran = (Veteran) o;
-        return getVet_name().equals(veteran.getVet_name()) && getVet_email().equals(veteran.getVet_email());
+        return getUserID() == veteran.getUserID() && getVet_name().equals(veteran.getVet_name()) && getVet_email().equals(veteran.getVet_email()) && Objects.equals(getVet_phone(), veteran.getVet_phone());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getVet_name(), getVet_email());
+        return Objects.hash(getUserID(), getVet_name(), getVet_email());
     }
 }
 
