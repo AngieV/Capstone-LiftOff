@@ -1,82 +1,102 @@
-package org.launchcode.Songs4Soldiers.controllers;
+package org.launchcode.Songs4Soldiers.Controllers;
+
+/*
+©Angela Volluz 2021
+*/
 
 import org.launchcode.Songs4Soldiers.data.UserData;
+import org.launchcode.Songs4Soldiers.data.UserRepository;
 import org.launchcode.Songs4Soldiers.models.Veteran;
 import org.launchcode.Songs4Soldiers.models.Volunteer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+@Controller
+@RequestMapping(value="/S4S")
 public class FormsController {
 
+
+    private static UserRepository userRepository;
+
+    @GetMapping("/contact")
+    public String displayForms(Model model) {
+        model.addAttribute("title_vet", "Apply for Assistance");
+        model.addAttribute(new Veteran());
+        List<String> branchList = Arrays.asList("--Please select--", "US Army", "US Navy", "US Air Force", "US Marines", "US Coast Guard");
+        model.addAttribute("branchList", branchList);
+        model.addAttribute("title_vol", "Be a Volunteer");
+        model.addAttribute(new Volunteer());
+        return "S4S/contact";
+    }
+
+    @PostMapping("/contact")
+    public String processVetAssistRequest(@Valid @ModelAttribute("veteran") Veteran veteran,
+                                          Errors errors, Model model) {
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Contact Us");
+            return "S4S/contact";
+        }
+        UserData.add(veteran);
+        return "redirect:registered";
+    }
+
+    @PostMapping("/createVolunteer")
+    public String createVolunteer(@ModelAttribute("volunteer") Volunteer volunteer, Model model){
+        UserData.add(volunteer);
+        return "redirect:registered";
+    }
+
+
+
+/*    @Autowired
+    private static UserRepository userRepository;
+
     private static List<Volunteer> volunteer = new ArrayList<>();
-    private static List<Veteran> veteran = new ArrayList<>();
 
-    @GetMapping("contact")
-    public String displayVetAssistForm(Model model){
-        model.addAttribute("title", "Request Assistance");
-        model.addAttribute("veteran", new Veteran());
-        /*model.addAttribute("vet_name", "vet_name");
-        model.addAttribute("vet_email", "vet_email");
-        model.addAttribute("vet_phone", "vet_phone");
-        model.addAttribute("vet_serviceStart", "vet_serviceStart");
-        model.addAttribute("vet_serviceEnd", "vet_serviceEnd");
-        model.addAttribute("vet_help", "vet_help");*/
+    //@GetMapping("/contact")
+    @RequestMapping
+    public String displayVetAssistanceForm(Model model) {
+        model.addAttribute("title_vet", "Apply for Assistance");
+        //model.addAttribute("title_vol", "Volunteer");
+        model.addAttribute(new Veteran());
+        //model.addAttribute(new Volunteer());
+        List<String> branchList = Arrays.asList("--Please select--", "US Army", "US Navy", "US Air Force", "US Marines", "US Coast Guard");
+        model.addAttribute("branchList", branchList);
         return "S4S/contact";
     }
 
-    @PostMapping("contact")
-    public String processVetAssistForm(@ModelAttribute @Valid Veteran newVeteran,
-                                       Errors errors, Model model){
+    //@RequestMapping(value = "/vetAssist", method = RequestMethod.POST)
+    //@PostMapping("/contact")
+    @RequestMapping(params="vetAssist")
 
-        if(errors.hasErrors()) {
+    //@RequestMapping(value = "/createVolunteer", method = RequestMethod.POST)
+    @PostMapping("/contact/createVolunteer")
+    public String createVolunteer(@ModelAttribute("volunteer") Volunteer volunteer, Model model){
+        //System.out.println(volunteer);
+        UserData.add(volunteer);
+        return "redirect:registered";
+    }
+
+         @GetMapping("/purchases")
+    public String displayPurchases(Model model){
+        return "S4S/purchases";
+    }
+
+    @PostMapping("/contact")
+    public String createVolunteer(@ModelAttribute @Valid Volunteer volunteer,
+                                  Errors errors, Model model) {
+        if (errors.hasErrors()) {
             model.addAttribute("title", "Contact Us");
             return "S4S/contact";
         }
-        UserData.add(newVeteran);
+        UserData.add(volunteer);
         return "redirect: /S4S/create_account";
-    }
-
-    @GetMapping("contact")
-    public String displayVolunteerForm(Model model){
-        model.addAttribute("title", "Request Assistance");
-        model.addAttribute("volunteer", new Volunteer());
-        /*model.addAttribute("name", "name");
-        model.addAttribute("email", "email");
-        model.addAttribute("phone", "phone");
-        model.addAttribute("help", "help");*/
-        return "S4S/contact";
-    }
-
-    @PostMapping("contact")
-    public String createVolunteer(@ModelAttribute @Valid Volunteer newVolunteer,
-                                  Errors errors, Model model){
-        if(errors.hasErrors()) {
-            model.addAttribute("title", "Contact Us");
-            return "S4S/contact";
-        }
-        UserData.add(newVolunteer);
-        return "redirect: /S4S/create_account";
-    }
-
-    @GetMapping("create_account")
-    public String displayCreateAccountForm(Model model){
-        model.addAttribute("title", "Create Account");
-        model.addAttribute("username", "username");
-        model.addAttribute("pwHash", "pwHash");
-        return "S4S/create_account";
-    }
-
-    @PostMapping("create_account")
-    public String createAccount(@RequestParam String username,
-                                @RequestParam String pwHash){
-        return "redirect: /S4S/home";
-    }
+    }*/
 }
