@@ -1,0 +1,364 @@
+  /*
+   * ©Angela Volluz 2021
+   *
+   * Wobfont Kit by https://www.fontsquirrel.com/
+   * https://www.fontsquirrel.com/tools/webfont-generator
+   *
+   */
+
+ @font-face {
+     font-family: 'boston_trafficregular';
+     src: url('//src/main/resources/static/fonts/boston-webfont.woff2') format('woff2'),
+          url('//src/main/resources/static/fonts/boston-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: 'unconform_round';
+     src: url('Songs4Soldiers/src/main/resources/static/fonts/uncon___-webfont.woff2') format('woff2'),
+          url('Songs4Soldiers/src/main/resources/static/fonts/uncon___-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+
+ }
+
+   body,
+   html {
+       margin: 0;
+       padding: 0;
+       width: 100%;
+       height: 100%;
+   }
+
+  img, embed,
+  object, video {
+      max-width: 100%;
+      align: center;
+  }
+
+  body {
+      font-family: sans-serif;
+      background-color: pink;
+      font-size: 14px;
+      color: black;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  h1, h2, h3,
+  h4, h5 {
+      font-family:'boston_trafficregular', "Impact", sans-serif;
+      font-weight:normal;
+      font-style:normal;
+      color: red;
+  }
+
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+
+  button {
+      min-height: 48px;
+      min-width: 48px;
+      padding: 0 10px 0 10px;
+      margin: 20px;
+  }
+
+  .error {
+    color: red;
+  }
+
+  /*
+   *
+   * Mobile Navigation
+   *
+   */
+
+    .mobile-container {
+      max-width: 480px;
+      margin: auto;
+      background-color: #555;
+      height: 500px;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      position: relative;
+    }
+
+    .topnav #myLinks {
+      display: none;
+    }
+
+    .topnav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+      display: block;
+    }
+
+    .topnav a.icon {
+      background: black;
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+  /*
+   *
+   * Top Level Navigation
+   *
+   */
+
+  nav {
+      width: 100%;
+      font-family: sans-serif;
+      align: center;
+  }
+
+  nav li {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 1.5em;
+        margin: 0;
+    }
+
+  nav .item {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      line-height: 24px;
+      padding: 1.5em;
+  }
+
+  nav a {
+      text-decoration: none;
+      color: black;
+  }
+
+  nav a:hover {
+      text-decoration: underline;
+      color: #212121;
+  }
+
+  /*
+   *
+   * SHOP
+   *
+   */
+.content-section {
+    margin: 1em;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+}
+
+.section-header {
+    font-family: "Metal Mania";
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.shop-item {
+    margin: 30px;
+}
+
+.shop-item-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.shop-item-image {
+    height: 250px;
+}
+
+.shop-item-details {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.shop-item-price {
+    flex-grow: 1;
+    color: #333;
+}
+
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cart-header {
+    font-weight: bold;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.cart-column {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-row {
+    display: flex;
+}
+
+.cart-item {
+    width: 45%;
+}
+
+.cart-price {
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-item-title {
+    color: #333;
+    margin-left: .5em;
+    font-size: 1.2em;
+}
+
+.cart-item-image {
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}
+
+.cart-quantity-input {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+
+.cart-row:last-child {
+    border-bottom: 1px solid black;
+}
+
+.cart-row:last-child .cart-column {
+    border: none;
+}
+
+.cart-total {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.cart-total-title {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+}
+
+.cart-total-price {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.btn-purchase {
+    display: block;
+    margin: 40px auto 80px auto;
+    font-size: 1.75em;
+}
+
+  /*
+   *
+   * FOOTER
+   *
+   */
+
+  #footer {
+      border-top: 1px solid #E0E0E0;
+      padding: 0;
+      width: 100%;
+      align:center;
+  }
+
+  #footer li {
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 0 1em;
+  }
+  #footer img{
+        min-height: 48px;
+        min-width: 48px;
+        }
+
+  #footer a {
+      margin: 5px;
+      text-decoration: none;
+      color: black;
+  }
+
+  #footer a:hover {
+        text-decoration: underline;
+        color: black;
+    }
+
+
+ @media screen and (min-width:500px) and (max-width:700px){
+
+    }
+
+  @media screen and (max-width:700px){
+
+    }

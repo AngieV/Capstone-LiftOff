@@ -1,17 +1,158 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments :: head"></head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+    <head th:replace="fragments :: head">
+        <!-- async forces this script to load in the background and continue loading body -->
+        <script src="../scripts/store.js" async></script>
+    </head>
+
 <body class="container">
+
 <div id="header" th:replace="fragments :: header"></div>
 
-<h1 th:text="${title}"></h1>
+<section class="container content-section">
+    <h1 th:text="${title}" class="section-header">Title</h1>
+    <div class="shop-items">
+        <div class="shop-item">
+            <img class="shop-item-image" src="../images/catalog/CrewSweatshirt_740x.jpeg">
+            <span class="shop-item-title">Crewneck Sweatshirt</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$30.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/TailgateFestTee-front_740x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">Tailgate Fest Baseball Tee</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$25.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/Womenstankfront_740x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">Women's Tank Top</span>
+            <div class="shop-item-details"></div>
+                <span class="shop-item-price">$20.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/2019teefront_470x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">2019 Event Tee</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$10.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/2019EventChildTshirtSale_470x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">2019 Youth Event Tee</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$10.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/2020teefront_1024x1024@2x.png" class="shop-item-image">
+            <span class="shop-item-title">2020 Event [Cancelled] Tee</span>
+            <div class="shop-item-details"></div>
+                <span class="shop-item-price">$15.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/noimage.jpeg" class="shop-item-image">
+            <span class="shop-item-title">2021 Event Tee</span>
+            <div class="shop-item-details"></div>
+                <span class="shop-item-price">$20.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/flatbillhat2_740x.png" class="shop-item-image">
+            <span class="shop-item-title">Flatbill Cap</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$25.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/bwhat_740x.png" class="shop-item-image">
+            <span class="shop-item-title">B/W Baseball Cap</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$20.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/visor_900x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">Sun Visor</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$15.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/masks_900x.png" class="shop-item-image">
+            <span class="shop-item-title">S4S Facemask</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$10.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/FannyPackProductShotrev_900x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">S4S Fanny Pack</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$10.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/Bluesunglasses_470x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">S4S Sun Glasses</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$5.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/20oztumbler_900x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">Insulated Tumbler</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$20.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/12oztumblers_900x.jpeg" class="shop-item-image">
+            <span class="shop-item-title">Insulated Cup</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$20.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/S4S-3.5x4decalmockup_900x.png" class="shop-item-image">
+            <span class="shop-item-title">S4S Decals (3)</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$5.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shop-item">
+            <img src="../images/catalog/S4S-3.5x4decalmockup_900x.png" class="shop-item-image">
+            <span class="shop-item-title">S4S Decals (1)</span>
+            <div class="shop-item-details">
+                <span class="shop-item-price">$2.00</span>
+                <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!--<script th:href="@{/js/catalogBuilder.js}"></script>-->
 
-<h2 th:text="${tickets}"></h2>
-<p th:text="${vet_name}">Buyer: </p>
-
-
-}
 <div id="footer" th:replace="fragments :: footer"></div>
 
 </body>
